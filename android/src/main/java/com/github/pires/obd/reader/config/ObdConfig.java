@@ -40,15 +40,10 @@ public final class ObdConfig {
     public static ArrayList<ObdCommand> getCommands() {
         ArrayList<ObdCommand> cmds = new ArrayList<>();
 
-        // Control
-        cmds.add(new ModuleVoltageCommand());
-
         // Engine
         cmds.add(new LoadCommand());
         cmds.add(new RPMCommand());
         cmds.add(new RuntimeCommand());
-        cmds.add(new ThrottlePositionCommand());
-        cmds.add(new RelativeAcceleratorPedalPositionCommand());
 
         // Fuel
         cmds.add(new FindFuelTypeCommand());
@@ -56,16 +51,14 @@ public final class ObdConfig {
         cmds.add(new FuelLevelCommand());
         cmds.add(new OilTempCommand());
 
-        // Pressure
-        cmds.add(new FuelPressureCommand());
-
-        // Temperature
-        cmds.add(new AirIntakeTemperatureCommand());
-        cmds.add(new AmbientAirTemperatureCommand());
-        cmds.add(new EngineCoolantTemperatureCommand());
-
         // Misc
+        cmds.add(new TroubleCodesCommand());
+        cmds.add(new ModuleVoltageCommand());
+        cmds.add(new AirIntakeTemperatureCommand());
+        cmds.add(new EngineCoolantTemperatureCommand());
         cmds.add(new SpeedCommand());
+        cmds.add(new VinCommand());
+
 
 
         return cmds;
