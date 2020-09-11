@@ -155,6 +155,12 @@ public class OBD2Handler implements ObdProgressListener {
     doUnbindService();
   }
 
+  public void resetTroubleCodes() {
+    if (mIsServiceBound) {
+      service.queueJob(new ObdCommandJob(ObdConfig.getResetTroubleCodeCommand()));
+    }
+  }
+
   public void setRemoteDeviceName(String aRemoteDeviceName) {
     mRemoteDeviceName = aRemoteDeviceName;
   }

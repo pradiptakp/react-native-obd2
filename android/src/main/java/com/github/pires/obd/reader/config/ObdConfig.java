@@ -29,6 +29,7 @@ import com.github.pires.obd.commands.temperature.AirIntakeTemperatureCommand;
 import com.github.pires.obd.commands.temperature.AmbientAirTemperatureCommand;
 import com.github.pires.obd.commands.temperature.EngineCoolantTemperatureCommand;
 import com.github.pires.obd.enums.FuelTrim;
+import com.github.pires.obd.commands.protocol.ResetTroubleCodesCommand;
 
 import java.util.ArrayList;
 
@@ -44,6 +45,8 @@ public final class ObdConfig {
         cmds.add(new LoadCommand());
         cmds.add(new RPMCommand());
         cmds.add(new RuntimeCommand());
+        cmds.add(new AirIntakeTemperatureCommand());
+        cmds.add(new EngineCoolantTemperatureCommand());
 
         // Fuel
         cmds.add(new FindFuelTypeCommand());
@@ -54,14 +57,16 @@ public final class ObdConfig {
         // Misc
         cmds.add(new TroubleCodesCommand());
         cmds.add(new ModuleVoltageCommand());
-        cmds.add(new AirIntakeTemperatureCommand());
-        cmds.add(new EngineCoolantTemperatureCommand());
         cmds.add(new SpeedCommand());
         cmds.add(new VinCommand());
 
 
 
         return cmds;
+    }
+
+    public static ObdCommand getResetTroubleCodeCommand() {
+      return new ResetTroubleCodesCommand()
     }
 
 }

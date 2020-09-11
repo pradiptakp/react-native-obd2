@@ -6,13 +6,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const jetbridge_obd2 = require('react-native').NativeModules.JetBridge_OBDII;
+const jetbridge_obd2 = require("react-native").NativeModules.JetBridge_OBDII;
 
 class react_obd2 {
-  constructor() {
-  }
+  constructor() {}
 
   ready() {
     jetbridge_obd2.ready();
@@ -30,6 +29,8 @@ class react_obd2 {
     jetbridge_obd2.setRemoteDeviceAddress(aDeviceAddress);
     jetbridge_obd2.startLiveData();
   }
+
+  resetTroubleCodes() {}
 
   stopLiveData() {
     return jetbridge_obd2.stopLiveData();

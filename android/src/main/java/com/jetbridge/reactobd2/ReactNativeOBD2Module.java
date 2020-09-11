@@ -127,6 +127,15 @@ public class ReactNativeOBD2Module extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void resetTroubleCodes() {
+    if (mOBD2Handler == null) {
+      mOBD2Handler = new OBD2Handler(mReactContext);
+    }
+
+    mOBD2Handler.resetTroubleCodes();
+  }
+
+  @ReactMethod
   public void stopLiveData() {
     if (mOBD2Handler == null) {
       mOBD2Handler = new OBD2Handler(mReactContext);
