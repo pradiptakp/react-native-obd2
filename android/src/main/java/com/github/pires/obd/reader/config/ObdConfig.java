@@ -66,7 +66,7 @@ public final class ObdConfig {
     }
 
     public static ObdCommand getResetTroubleCodeCommand() {
-      return new ResetTroubleCodesCommand()
+      return new ResetTroubleCodesCommand();
     }
 
 }
