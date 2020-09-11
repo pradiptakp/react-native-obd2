@@ -30,7 +30,9 @@ class react_obd2 {
     jetbridge_obd2.startLiveData();
   }
 
-  resetTroubleCodes() {}
+  resetTroubleCodes() {
+    jetbridge_obd2.resetTroubleCodes();
+  }
 
   stopLiveData() {
     return jetbridge_obd2.stopLiveData();
